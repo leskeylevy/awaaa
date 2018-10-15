@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
@@ -9,11 +9,14 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from .models import Projects,Profile
+from .forms import ProjectForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    pro = ProjectForm()
+    return render(request, 'index.html', {'pro':pro})
 
 
 def signup(request):
@@ -56,3 +59,17 @@ def activate(request, uidb64, token):
             'Thank you for your email confirmation. Now you can' '<a href="/accounts/login"> login </a>your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+def project(request):
+    if request.method == 'POST':
+        pro=ProjectForm(request.POST,request.FILES)
+        if pro.is_valid():
+            projo = pro.save(commit=False)
+            projo.user=request.user
+            projo.save()
+            return render('index')
+        return redirect('index')
+
+
+
