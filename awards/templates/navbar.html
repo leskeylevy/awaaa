@@ -12,7 +12,7 @@
       </li>
        <section class="icons-section">
       {% if user.is_authenticated %}
-      <li><a class="fa fa-user" href="/accounts/profile" ></a></li>
+      <li><a class="fa fa-user" href="/profile" ></a></li>
          <li><button data-toggle="modal" data-target="#projects">Upload Project</button></li>
       <li><a class="fas fa-power-off" href="/logout" ></a></li>
       {% else %}
@@ -40,7 +40,7 @@
         <form  action="{%url 'projo'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
-    {% bootstrap_form pro%}
+    {% bootstrap_form pro %}
     <input type="submit" class="btn btn-success btn-lg" value="Post">
   </form>
       </div>
