@@ -68,8 +68,8 @@ def project(request):
             projo = pro.save(commit=False)
             projo.user=request.user
             projo.save()
-            return render('index')
-        return redirect('index')
+            return render(request, 'index.html', {'pro':pro})
+        return redirect(request, 'index.html', {'pro':pro})
 
 
 
