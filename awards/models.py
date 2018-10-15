@@ -41,4 +41,10 @@ class Projects(models.Model):
     class Meta:
         ordering = ['postedon']
 
+    @classmethod
+    def get_all(cls):
+        projects = cls.objects.order_by('postedon')
+        return projects
+
+
 

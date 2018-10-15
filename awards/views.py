@@ -11,12 +11,14 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from .models import Projects,Profile
 from .forms import ProjectForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 def index(request):
+    projects = Projects.get_all()
     pro = ProjectForm()
-    return render(request, 'index.html', {'pro':pro})
+    return render(request, 'index.html', {'pro':pro, 'projects':projects})
 
 
 def signup(request):
@@ -70,6 +72,12 @@ def project(request):
             projo.save()
             return render(request, 'index.html', {'pro':pro})
         return redirect(request, 'index.html', {'pro':pro})
+
+
+@login_required
+def profile(request):
+    pro = ProjectForm()
+    return render(request,'profile.html', {"pro":pro})
 
 
 
