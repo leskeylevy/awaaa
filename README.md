@@ -28,6 +28,7 @@ View posted projects and their details.
 * Search for projects 
 * View projects overall score
 * View my profile page.
+* [live site](https://awaaa.herokuapp.com/)
 
 ## API Endpoints
 Users can access data from this application via an API.There are two API endpoints:
