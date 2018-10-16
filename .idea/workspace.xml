@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/awaa/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/awaa/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/awaa/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="563">
+              <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
               <folding>
                 <element signature="e#306#315#0" expanded="true" />
               </folding>
@@ -271,7 +269,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="25" width="683" height="741" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.23939393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -284,7 +281,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.23895253" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.23895253" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -474,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/awaa/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="563">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
           <folding>
             <element signature="e#306#315#0" expanded="true" />
           </folding>

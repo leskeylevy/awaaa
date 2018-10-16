@@ -1,1 +1,1 @@
-web: gunicorn awaaa.wsgi
+web: gunicorn awaa.wsgi
