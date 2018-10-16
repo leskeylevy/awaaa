@@ -46,5 +46,10 @@ class Projects(models.Model):
         projects = cls.objects.order_by('postedon')
         return projects
 
+    @classmethod
+    def search_by_name(cls,search_term):
+        proje = cls.objects.filter(title_icontains=search_term)
+        return proje
+
 
 
