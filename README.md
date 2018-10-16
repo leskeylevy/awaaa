@@ -47,11 +47,11 @@ cd gallery/
 python3.6 -m venv --without-pip virtual
 <br />Step 3: Activate virtual environment
 
-<br />source virtual/bin/activate
-<br />install pip using curl
+<br />source virtual/bin/activate.
+<br />install pip using curl.
 ## Built With
-* Python3.6 - Python is a programming language that lets you work quickly and integrate systems more effectively
-* Django - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design
+* Python3.6 - Python is a programming language that lets you work quickly and integrate systems more effectively.
+* Django - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 * postgresql - PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
 ## Bugs
 If you encounter any bugs, email me on leskeylevy@gmail.com. If you would like to add some changes, please feel free to
@@ -61,7 +61,7 @@ fork the project and make a pull request.
 LESKEYLEVY
 
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
 
 ## Acknowledgments
-Moringa School
+Moringa School.
