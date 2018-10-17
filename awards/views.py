@@ -76,9 +76,10 @@ def project(request):
 
 
 @login_required
-def profile(request):
-    pro = ProjectForm()
-    return render(request,'profile.html', {"pro":pro})
+def profile(request,profile_id):
+    view_profile = Profile.objects.get(user_id=profile_id)
+    projects = Projects.objects.filter(profile=profile_id)
+    return render(request,'profile.html', locals())
 
 
 def search_results(request):
