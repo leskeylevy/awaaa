@@ -11,7 +11,7 @@
 
        <section class="icons-section">
       {% if user.is_authenticated %}
-         <a class="fa fa-user" href="/profile" ></a>
+         <a class="fa fa-user" href="{% url 'myprofile'%}" ></a>
 
      <a class="fas fa-power-off" href="/logout" ></a>
       {% else %}

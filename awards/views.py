@@ -10,7 +10,7 @@ from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from .models import Projects,Profile
-from .forms import ProjectForm
+from .forms import ProjectForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -29,6 +29,8 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            profile=Profile(user=user)
+            profile.save()
             current_site = get_current_site(request)
             mail_subject = 'Activate your awaaa account.'
             message = render_to_string('ActivationEmail.html', {
@@ -72,7 +74,7 @@ def project(request):
             projo.user=request.user
             projo.save()
             return render(request, 'index.html', {'pro':pro})
-        return redirect(request, 'index.html', {'pro':pro})
+        return redirect('index')
 
 
 @login_required
@@ -95,4 +97,28 @@ def search_results(request):
         return render(request,'search.html', {"message":message})
 
 
+@login_required
+def me_profile(request):
+    current_user = request.user
+    pro = ProjectForm()
+    form = ProfileForm()
+    profile = Profile.objects.all().filter(user=current_user.id)
+    projs = Projects.objects.filter(user=current_user.id)
+    if request.method == 'POST':
+        pro = ProjectForm(request.POST,request.FILES)
+        form = ProfileForm(request.POST,request.FILES,instance=current_user.profile)
+        if pro.is_valid():
+            prjct = pro.save(commit=False)
+            prjct.user = current_user
+            prjct.save()
+            print('valid')
+            return render(request, 'profile.html', locals())
+        if form.is_valid():
+            print('valid')
+            prf = form.save(commit=False)
+            prf.user = current_user
+            prf.save()
+            print(prf)
+        return render(request, 'profile.html', locals())
+    return render(request, 'profile.html', locals())
 
