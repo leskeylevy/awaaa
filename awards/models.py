@@ -47,9 +47,15 @@ class Projects(models.Model):
         return projects
 
     @classmethod
-    def search_by_name(cls,search_term):
+    def search_by_name(cls, search_term):
         proje = cls.objects.filter(name__icontains=search_term)
         return proje
 
 
-
+class Ratings(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='ratings')
+    design = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    usability = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    creativity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    content = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
