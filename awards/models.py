@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
-import datetime as dt
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -59,3 +59,12 @@ class Ratings(models.Model):
     usability = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     creativity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     content = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+
+    def save_ratings(self):
+        self.save()
+
+
+class Comments(models.Model):
+    user = models.ForeignKey(User)
+    project = models.ForeignKey(Projects, related_name='comments')
+    comment = models.CharField(max_length=150)
