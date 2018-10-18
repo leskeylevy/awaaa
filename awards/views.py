@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from .models import Projects,Profile, Ratings, Comments
+from .models import Projects, Profile, Ratings, Comments
 from .forms import ProjectForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 
@@ -19,7 +19,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     projects = Projects.get_all()
     pro = ProjectForm()
-    return render(request, 'index.html', {'pro':pro, 'projects':projects})
+    return render(request, 'index.html', {'pro': pro, 'projects': projects})
 
 
 def signup(request):
@@ -29,19 +29,19 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
-            profile=Profile(user=user)
+            profile = Profile(user=user)
             profile.save()
             current_site = get_current_site(request)
             mail_subject = 'Activate your awaaa account.'
             message = render_to_string('ActivationEmail.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                'token':account_activation_token.make_token(user),
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
-                        mail_subject, message, to=[to_email]
+                mail_subject, message, to=[to_email]
             )
             email.send()
             return HttpResponse('Please confirm your email address to complete the registration')
@@ -55,11 +55,11 @@ def activate(request, uidb64, token):
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user=None
+        user = None
     if user is not None and account_activation_token.check_token(user, token):
-        user.is_active=True
+        user.is_active = True
         user.save()
-        login(request,user)
+        login(request, user)
         return HttpResponse(
             'Thank you for your email confirmation. Now you can' '<a href="/accounts/login"> login </a>your account.')
     else:
@@ -68,20 +68,20 @@ def activate(request, uidb64, token):
 
 def project(request):
     if request.method == 'POST':
-        pro=ProjectForm(request.POST,request.FILES)
+        pro = ProjectForm(request.POST, request.FILES)
         if pro.is_valid():
             projo = pro.save(commit=False)
-            projo.user=request.user
+            projo.user = request.user
             projo.save()
-            return render(request, 'index.html', {'pro':pro})
+            return render(request, 'index.html', {'pro': pro})
         return redirect('index')
 
 
 @login_required
-def profile(request,profile_id):
+def profile(request, profile_id):
     view_profile = Profile.objects.get(user_id=profile_id)
     projects = Projects.objects.filter(profile=profile_id)
-    return render(request,'profile.html', locals())
+    return render(request, 'profile.html', locals())
 
 
 def search_results(request):
@@ -90,11 +90,11 @@ def search_results(request):
         searched_projects = Projects.search_by_name(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html', {"message":message,"projects":searched_projects})
+        return render(request, 'search.html', {"message": message, "projects": searched_projects})
 
     else:
         message = "You haven't searched for any term"
-        return render(request,'search.html', {"message":message})
+        return render(request, 'search.html', {"message": message})
 
 
 @login_required
@@ -105,8 +105,8 @@ def me_profile(request):
     profile = Profile.objects.all().filter(user=current_user.id)
     projs = Projects.objects.filter(user=current_user.id)
     if request.method == 'POST':
-        pro = ProjectForm(request.POST,request.FILES)
-        form = ProfileForm(request.POST,request.FILES,instance=current_user.profile)
+        pro = ProjectForm(request.POST, request.FILES)
+        form = ProfileForm(request.POST, request.FILES, instance=current_user.profile)
         if pro.is_valid():
             prjct = pro.save(commit=False)
             prjct.user = current_user
@@ -123,7 +123,7 @@ def me_profile(request):
     return render(request, 'profile.html', locals())
 
 
-def rate_post_by_id(request,id):
+def rate_post_by_id(request, id):
     project = Projects.objects.get(id=id)
     ratings = Ratings.objects.filter(project=project)
     design = []
@@ -138,25 +138,23 @@ def rate_post_by_id(request,id):
 
     dsn = []
     use = []
-    crtvty=[]
-    cntnt=[]
+    crtvty = []
+    cntnt = []
 
-    if len(design)>0:
-        des=(sum(design)/len(design))
+    if len(design) > 0:
+        des = (sum(design) / len(design))
         dsn.append(des)
 
-    if len(usability)>0:
-        usa=(sum(usability)/len(usability))
+    if len(usability) > 0:
+        usa = (sum(usability) / len(usability))
         use.append(usa)
 
-    if len(creativity)>0:
-        crt=(sum(creativity)/len(creativity))
+    if len(creativity) > 0:
+        crt = (sum(creativity) / len(creativity))
         crtvty.append(crt)
 
-    if len(content)>0:
-        ct=(sum(content)/len(content))
+    if len(content) > 0:
+        ct = (sum(content) / len(content))
         cntnt.append(ct)
 
-        
-
-
+    return render(request, 'index')
