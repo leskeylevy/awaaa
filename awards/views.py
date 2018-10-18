@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from .models import Projects,Profile
+from .models import Projects,Profile, Ratings, Comments
 from .forms import ProjectForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 
@@ -121,4 +121,42 @@ def me_profile(request):
             print(prf)
         return render(request, 'profile.html', locals())
     return render(request, 'profile.html', locals())
+
+
+def rate_post_by_id(request,id):
+    project = Projects.objects.get(id=id)
+    ratings = Ratings.objects.filter(project=project)
+    design = []
+    usability = []
+    creativity = []
+    content = []
+    for rate in ratings:
+        design.append(rate.design)
+        usability.append(rate.usability)
+        creativity.append(rate.creativity)
+        content.append(rate.content)
+
+    dsn = []
+    use = []
+    crtvty=[]
+    cntnt=[]
+
+    if len(design)>0:
+        des=(sum(design)/len(design))
+        dsn.append(des)
+
+    if len(usability)>0:
+        usa=(sum(usability)/len(usability))
+        use.append(usa)
+
+    if len(creativity)>0:
+        crt=(sum(creativity)/len(creativity))
+        crtvty.append(crt)
+
+    if len(content)>0:
+        ct=(sum(content)/len(content))
+        cntnt.append(ct)
+
+        
+
 

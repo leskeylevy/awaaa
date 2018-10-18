@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/awards/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
           <entry key="env" value="11" />
           <entry key="html" value="2353" />
           <entry key="md" value="1779" />
-          <entry key="py" value="3441" />
+          <entry key="py" value="3974" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
@@ -65,7 +65,7 @@
           <entry key="HTML" value="2353" />
           <entry key="Markdown" value="1779" />
           <entry key="PLAIN_TEXT" value="35" />
-          <entry key="Python" value="3441" />
+          <entry key="Python" value="3974" />
         </counts>
       </usages-collector>
     </session>
@@ -81,13 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/awards/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="529">
+              <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="8" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
+                <marker date="1539846002865" expanded="true" signature="4562:5345" ph="..." />
               </folding>
             </state>
           </provider>
@@ -102,15 +103,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/awards/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+            <state relative-caret-position="440">
+              <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1539844650328" expanded="true" signature="1473:1999" ph="..." />
-                <marker date="1539844650328" expanded="true" signature="2078:2224" ph="..." />
+                <marker date="1539844790797" expanded="true" signature="1473:1999" ph="..." />
+                <marker date="1539844790797" expanded="true" signature="2079:2229" ph="..." />
               </folding>
             </state>
           </provider>
@@ -208,10 +209,10 @@
         <option value="$PROJECT_DIR$/awards/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/awards/urls.py" />
         <option value="$PROJECT_DIR$/awards/templates/profile.html" />
-        <option value="$PROJECT_DIR$/awards/views.py" />
         <option value="$PROJECT_DIR$/awards/templates/navbar.html" />
         <option value="$PROJECT_DIR$/awards/templates/index.html" />
         <option value="$PROJECT_DIR$/awards/models.py" />
+        <option value="$PROJECT_DIR$/awards/views.py" />
       </list>
     </option>
   </component>
@@ -436,16 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/awards/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/awards/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -506,12 +497,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/awards/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+        <state relative-caret-position="440">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <marker date="1539844650328" expanded="true" signature="1473:1999" ph="..." />
-            <marker date="1539844650328" expanded="true" signature="2078:2224" ph="..." />
+            <marker date="1539844790797" expanded="true" signature="1473:1999" ph="..." />
+            <marker date="1539844790797" expanded="true" signature="2079:2229" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awards/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1539846002865" expanded="true" signature="4562:5345" ph="..." />
           </folding>
         </state>
       </provider>
