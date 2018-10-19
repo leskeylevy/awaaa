@@ -74,7 +74,6 @@ SECRET_KEY = 'px7#ag43*x+^#6d)sq0h4&mq(e8um24y3+nv($66b*@bpo$wmi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'index'
 # Application definition
