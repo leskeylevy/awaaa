@@ -15,9 +15,41 @@
 
   {% if projects %}
     {% for project in projects %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{project.name}}</h1>
+      <div class="col-md-4">
+      <div class="card" style="width:400px">
+        <div class="hovereffect">
+          <img class="card-img-top" src="{{project.image.url}}" width="500px" height="500px" alt="">
+          <div class="overlay">
+            <div class="rotate">
+              <p class="group1">
+                <a href="/">
+                        <i class="far fa-heart"></i>
+                    </a>
+                <a href="{{project.link}}">
+                        <i class="fas fa-share"></i>
+                    </a>
+              </p>
+              <hr>
+              <hr>
+              <p class="group2">
+                <a href="{{project.video.url}}">
+                        <i class="fas fa-video"></i>
+                    </a>
+                <a href="/">
+                        <i class="far fa-comment"></i>
+                    </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h4>{{projo.name}}</h4>
+          <h6><em>posted: {{project.postedon}}</em></h6>
+          <h6><em>BY {{project.user.username}}</em></h6>
+        </div>
       </div>
+    </div>
+
     {% endfor %}
   {% endif %}
   </div>
