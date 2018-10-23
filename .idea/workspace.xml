@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/awards/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +35,7 @@
           <entry key="html" value="19" />
           <entry key="js" value="1" />
           <entry key="md" value="2" />
-          <entry key="py" value="24" />
+          <entry key="py" value="25" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
@@ -47,7 +46,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="24" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -77,17 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -101,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/awaa/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="1631">
               <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
             </state>
           </provider>
@@ -143,7 +133,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/awards/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -151,6 +141,21 @@
               <folding>
                 <marker date="1540302663988" expanded="true" signature="1115:1768" ph="..." />
                 <marker date="1540302663988" expanded="true" signature="6222:6227" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/awards/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+                <marker date="1540284862079" expanded="true" signature="547:552" ph="..." />
+                <marker date="1540284862079" expanded="true" signature="664:669" ph="..." />
+                <marker date="1540284862079" expanded="true" signature="901:906" ph="..." />
               </folding>
             </state>
           </provider>
@@ -447,19 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/awards/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1540284862079" expanded="true" signature="547:552" ph="..." />
-            <marker date="1540284862079" expanded="true" signature="664:669" ph="..." />
-            <marker date="1540284862079" expanded="true" signature="901:906" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/awards/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-435">
@@ -493,13 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/awards/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -530,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/awaa/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/awaa/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -562,6 +540,33 @@
             <marker date="1540302663988" expanded="true" signature="1115:1768" ph="..." />
             <marker date="1540302663988" expanded="true" signature="6222:6227" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awards/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1540284862079" expanded="true" signature="547:552" ph="..." />
+            <marker date="1540284862079" expanded="true" signature="664:669" ph="..." />
+            <marker date="1540284862079" expanded="true" signature="901:906" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaa/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1631">
+          <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
         </state>
       </provider>
     </entry>
