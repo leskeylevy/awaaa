@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/awards/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/awards/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="f4c53a6e-9111-41d6-bab7-4b351f3fba8e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +294,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="25" width="683" height="741" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27727273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
