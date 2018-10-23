@@ -80,6 +80,7 @@ LOGIN_REDIRECT_URL = 'index'
 
 INSTALLED_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
     'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -177,3 +178,9 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
