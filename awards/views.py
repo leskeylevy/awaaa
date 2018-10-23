@@ -7,15 +7,14 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
-from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from .models import Projects, Profile, Ratings, Comments
 from .forms import ProjectForm, ProfileForm, Rates
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from .serializer import *
+from .permissions import IsAdminOrReadOnly
 
 
 # Create your views here.
