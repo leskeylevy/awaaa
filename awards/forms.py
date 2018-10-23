@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Projects, Profile
+from .models import Projects, Profile, Ratings
 
 
 class SignupForm(UserCreationForm):
@@ -15,22 +15,22 @@ class SignupForm(UserCreationForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
-        fields = ('name','image','video','link')
+        fields = ('name', 'image', 'video', 'link')
 
 
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('dp', 'bio','contact')
+        fields = ('dp', 'bio', 'contact')
 
 
 class Comments(forms.ModelForm):
     class Meta:
-        fields =['comment']
+        fields = ['comment']
 
 
-rating_choices =[
-    (1,'1'),
+rating_choices = [
+    (1, '1'),
     (2, '2'),
     (3, '3'),
     (4, '4'),
@@ -44,7 +44,10 @@ rating_choices =[
 
 
 class Rates(forms.Form):
-    design = forms.CharField(label="How awesome is the apps design",widget=forms.RadioSelect(choices=rating_choices))
-    usability = forms.CharField(label="How usable is the app", widget=forms.RadioSelect(choices=rating_choices))
-    creativity = forms.CharField(label="How creative is the app", widget=forms.RadioSelect(choices=rating_choices))
-    content = forms.CharField(label="how awesome is the apps content    ", widget=forms.RadioSelect(choices=rating_choices))
+    design = forms.CharField(label='Design level', widget=forms.RadioSelect(choices=rating_choices))
+
+    usability = forms.CharField(label='Usability level', widget=forms.RadioSelect(choices=rating_choices))
+
+    creativity = forms.CharField(label='Creativity level', widget=forms.RadioSelect(choices=rating_choices))
+
+    content = forms.CharField(label='Content level', widget=forms.RadioSelect(choices=rating_choices))

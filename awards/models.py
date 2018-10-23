@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from django.core.validators import MaxValueValidator, MinValueValidator
+import numpy as np
 
 
 # Create your models here.
@@ -51,6 +52,13 @@ class Projects(models.Model):
         proje = cls.objects.filter(name__icontains=search_term)
         return proje
 
+    def average_rating(self):
+        all_ratings = list(map(lambda x: x.design, self.ratings.all()))
+        # all_ratings = list(map(lambda x: x.content, self.ratings_set.all()))
+        # all_ratings = list(map(lambda x: x.usability, self.ratings_set.all()))
+        # all_ratings = list(map(lambda x: x.usability, self.ratings_set.all()))
+        return np.mean(all_ratings)
+
 
 class Ratings(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -60,8 +68,11 @@ class Ratings(models.Model):
     creativity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     content = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
 
-    def save_ratings(self):
-        self.save()
+    @classmethod
+    def get_all(cls):
+        all_objects = Review.objects.all()
+        return all_objects
+
 
 
 class Comments(models.Model):

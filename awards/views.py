@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
@@ -10,7 +10,7 @@ from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from .models import Projects, Profile, Ratings, Comments
-from .forms import ProjectForm, ProfileForm
+from .forms import ProjectForm, ProfileForm, Rates
 from django.contrib.auth.decorators import login_required
 
 
@@ -19,8 +19,27 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     projects = Projects.get_all()
     pro = ProjectForm()
-    return render(request, 'index.html', {'pro': pro, 'projects': projects})
+    review = Rates()
 
+    return render(request, 'index.html', locals())
+
+
+# def rate(request,rate_id):
+#     current_ user = request.user
+#     project = get_object_or_404(Projects,pk=rate_id)
+#     if request.method == 'POST':
+#         review = Rates(request.POST)
+#         if review.is_valid():
+#             design = review.cleaned_data['design']
+#             content = review.cleaned_data['content']
+#             usability = review.cleaned_data['usability']
+#             creativity = review.cleaned_data['creativity']
+#             votes = Ratings(design=design, usability=usability,
+#                             content=content, creativity=creativity,
+#                             user=request.user, project=project)
+#             votes.save()
+#             return redirect('/')
+#     return render(request, 'index.html', locals())
 
 def signup(request):
     if request.method == 'POST':
@@ -123,38 +142,20 @@ def me_profile(request):
     return render(request, 'profile.html', locals())
 
 
-def rate_post_by_id(request, id):
-    project = Projects.objects.get(id=id)
-    ratings = Ratings.objects.filter(project=project)
-    design = []
-    usability = []
-    creativity = []
-    content = []
-    for rate in ratings:
-        design.append(rate.design)
-        usability.append(rate.usability)
-        creativity.append(rate.creativity)
-        content.append(rate.content)
-
-    dsn = []
-    use = []
-    crtvty = []
-    cntnt = []
-
-    if len(design) > 0:
-        des = (sum(design) / len(design))
-        dsn.append(des)
-
-    if len(usability) > 0:
-        usa = (sum(usability) / len(usability))
-        use.append(usa)
-
-    if len(creativity) > 0:
-        crt = (sum(creativity) / len(creativity))
-        crtvty.append(crt)
-
-    if len(content) > 0:
-        ct = (sum(content) / len(content))
-        cntnt.append(ct)
-
-    return render(request, 'index')
+def rate(request, ratings_id):
+    title = 'awards'
+    current_user = request.user
+    prjct = get_object_or_404(Projects, pk=ratings_id)
+    if request.method == 'POST':
+        review = Rates(request.POST)
+        if review.is_valid():
+            design = review.cleaned_data['design']
+            content = review.cleaned_data['content']
+            usability = review.cleaned_data['usability']
+            creativity = review.cleaned_data['creativity']
+            votes = Ratings(design=design, usability=usability,
+                            content=content, creativity=creativity,
+                            user=request.user, project=prjct)
+            votes.save()
+            return redirect('/')
+    return render(request, 'index.html', locals())

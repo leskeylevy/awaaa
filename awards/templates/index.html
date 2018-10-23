@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %}{% block content %}
+{% extends 'base.html' %} {% load bootstrap3 %}{% load static %}{% block content %}
 <div class="jumbotron" >
 
     <div id="landing">
@@ -17,8 +17,8 @@
           <div class="overlay">
             <div class="rotate">
               <p class="group1">
-                <a href="/">
-                        <i class="far fa-heart"></i>
+               <a data-toggle="modal" href="#rate"><i class="far fa-heart"></i>
+
                     </a>
                 <a href="{{projo.link}}">
                         <i class="fas fa-share"></i>
@@ -41,11 +41,41 @@
           <h4>{{projo.name}}</h4>
           <h6><em>posted: {{projo.postedon}}</em></h6>
           <h6><em>BY {{projo.user.username}}</em></h6>
+            <h6><em>avg Rating {{projo.average_rating}}</em></h6>
         </div>
       </div>
     </div>
+      <!--MODAL-->
+   <div class="modal fade" id="rate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Rate site according to this categories</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+         <div class='row' style="margin-left: 10px;" >
+                      <em><b>N/B:<h4>Fill in all the fields</h4></b></em>
+                  </div>
+      <div class="modal-body">
+        <form  action="/review/{{projo.id}}" method="post" enctype="multipart/form-data">
 
+    {%csrf_token%}
+
+    {% bootstrap_form review %}
+    <input type="submit" class="btn btn-success" value="Post">
+  </form>
+      </div>
+      <div class="modal-footer">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+      <!--ENDMODAL-->
     {% endfor %}
+
   </div>
 </div>
 

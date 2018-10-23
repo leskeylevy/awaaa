@@ -12,7 +12,10 @@ urlpatterns=[
     url(r'^profile/', views.me_profile,name='myprofile'),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^projects',views.project,name='projo'),
-    url(r'^search/', views.search_results, name='search_results')
+    url(r'^search/', views.search_results, name='search_results'),
+    url('^review/(\d+)$', views.rate, name='review'),
+
+
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
