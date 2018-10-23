@@ -79,6 +79,7 @@ LOGIN_REDIRECT_URL = 'index'
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
